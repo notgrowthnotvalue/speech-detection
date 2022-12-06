@@ -14,6 +14,18 @@
     <script>
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+        const recognition = new SpeechRecognition();
+        console.log(recognition);
+        recognition.interimResults = true; // shows text as soon as you speak 
+
+        let p = document.createElement('p'); // create paragraphs 
+        const words = document.querySelector('.words');
+        words.appendChild(p);
+
+        recognition.addEventListener('results', e => {
+            console.log(e)
+        })
+
 
     </script>
 
